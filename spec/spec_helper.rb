@@ -7,6 +7,7 @@ require 'pry'
 require 'shoulda/matchers'
 require 'ticket'
 require 'project'
+require './api.rb'
 
 ActiveRecord::Base.establish_connection(YAML::load(File.open('./db/config.yml'))["test"])
 
