@@ -11,5 +11,5 @@ get '/tickets' do
 end
 
 get '/tickets/:id' do
-  "Ticket with id: #{params[:id]}"
+  Ticket.find(params[:id]).to_json
 end
