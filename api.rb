@@ -9,3 +9,7 @@ require './lib/project.rb'
 get '/tickets' do
   "All tickets"
 end
+
+get '/tickets/:id' do
+  "Ticket with id: #{params[:id]}"
+end
