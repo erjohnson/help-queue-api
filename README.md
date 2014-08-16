@@ -11,18 +11,6 @@ Roadmap for routes:
 # returns all tickets
 GET /tickets
 
-# returns tickets for given date
-GET /tickets/:date
-
-# returns tickets for given date-range
-GET /tickets/:daterange
-
-# returns tickets for given student
-GET /tickets/:student
-
-# returns tickets for given project
-GET /tickets/
-
 # returns ticket with given id
 GET /tickets/:id
 
