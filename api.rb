@@ -20,3 +20,9 @@ post '/tickets' do
   @ticket = Ticket.new(params[:ticket])
   @ticket.save.to_json
 end
+
+# Update a ticket
+put '/tickets/:id' do
+  @ticket = Ticket.find(params[:id])
+  @ticket.update(params[:ticket]).to_json
+end

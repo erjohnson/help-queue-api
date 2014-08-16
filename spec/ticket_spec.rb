@@ -27,9 +27,22 @@ describe 'Ticket' do
   
   describe 'POST /tickets' do
     it 'creates a new ticket' do
-      post "tickets"
+      post "/tickets"
       expect(last_response).to be_ok
       expect(last_response.status).to eq 200
+    end
+  end
+  
+  describe 'PUT /tickets/:id' do
+    let(:ticket) do
+      Ticket.create(student: 'Joe')
+    end
+    let(:ticket_params) do
+      {:student => 'Brian'}
+    end
+    it 'updates a ticket' do
+      put "tickets/#{ticket.id}"
+      expect(last_response.status).to eq 204
     end
   end
 end
