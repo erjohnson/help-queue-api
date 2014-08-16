@@ -10,6 +10,13 @@ get '/tickets' do
   Ticket.all.to_json
 end
 
+# Get ticket by id
 get '/tickets/:id' do
   Ticket.find(params[:id]).to_json
+end
+
+# Create a ticket
+post '/tickets' do
+  @ticket = Ticket.new(params[:ticket])
+  @ticket.save.to_json
 end

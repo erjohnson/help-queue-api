@@ -24,4 +24,12 @@ describe 'Ticket' do
       expect(last_response.body).to eq new_ticket.to_json
     end
   end
+  
+  describe 'POST /tickets' do
+    it 'creates a new ticket' do
+      post "tickets"
+      expect(last_response).to be_ok
+      expect(last_response.status).to eq 200
+    end
+  end
 end
