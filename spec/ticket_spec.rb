@@ -7,10 +7,11 @@ describe 'Ticket' do
   
   describe 'GET /tickets' do
     it 'returns all tickets' do
+      new_ticket = Ticket.create(student: 'Mary', project_id: 1, question: 'Find Ruby object by id')
       get '/tickets'
       expect(last_response).to be_ok
       expect(last_response.status).to eq 200
-      expect(last_response.body).to eq 'All tickets'
+      expect(last_response.body).to eq [new_ticket].to_json
     end
   end
   

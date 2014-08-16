@@ -7,7 +7,7 @@ require './lib/project.rb'
 
 # Get all the tickets
 get '/tickets' do
-  "All tickets"
+  Ticket.all.to_json
 end
 
 get '/tickets/:id' do
